@@ -41,125 +41,120 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* VERSÃO DESKTOP - hidden em telas pequenas */}
-      <section
-        className="hidden sm:flex relative w-full min-h-screen bg-black text-white flex-col items-center overflow-hidden"
+      {/* VERSÃO DESKTOP - Uma página corrida com duas seções */}
+      <div 
+        className="hidden sm:block relative w-full bg-black text-white"
         style={{
-          backgroundImage: "url('/background-superior.png')",
+          backgroundImage: "url('/background-mobile.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* LOGO CENTRALIZADO */}
-        <div className="pt-6 lg:pt-8 z-30">
-          <Image
-            src="/logo.png"
-            alt="Jeniffer Zamoner Logo"
-            width={200}
-            height={80}
-            className="w-[100px] md:w-[120px] lg:w-[140px] mx-auto h-auto"
-          />
-        </div>
-
-        {/* IMAGEM DA JENIFFER */}
-        <div className="relative z-10 mt-4 md:mt-6 flex justify-center w-full">
-          <Image
-            src="/jeniffer-image.png"
-            alt="Jeniffer Zamoner"
-            width={600}
-            height={900}
-            className="w-[280px] md:w-[360px] lg:w-[380px] xl:w-[420px] h-auto object-contain"
-            priority
-          />
-
-          {/* CARD DESKTOP */}
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-            className="
-              absolute bottom-[-80px] md:bottom-[-100px] lg:bottom-[-120px] 
-              left-[35%] z-20
-              w-[100%] max-w-[480px]
-            "
-          >
-            <div className="
-              relative bg-black/90 backdrop-blur-sm text-white text-center
-              px-6 py-4 lg:px-8 lg:py-5 rounded-2xl
-              border-2 border-green-400 shadow-2xl shadow-green-500/20
-            ">
-              <div className="
-                absolute inset-0 rounded-2xl
-                bg-gradient-to-r from-transparent via-green-400/10 to-transparent
-              "></div>
-              
-              <div className="relative z-10">
-                <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-green-400">
-                  Seus resultados a um clique!
-                </h2>
-                <p className="text-base md:text-lg leading-relaxed text-gray-100">
-                  Escolha abaixo o que mais faz sentido para você hoje!
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SEÇÃO DE BOTÕES DESKTOP - Segunda página */}
-      <section 
-        className="hidden sm:block relative w-full bg-black text-white py-16 lg:py-20 -mt-1"
-        style={{
-          backgroundImage: "url('/background-inferior.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'top center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-green-400">
-              Como posso te ajudar?
-            </h2>
-            <p className="text-lg text-gray-300">
-              Escolha a opção que melhor se adequa aos seus objetivos
-            </p>
+        {/* PRIMEIRA SEÇÃO - Hero */}
+        <section className="relative w-full min-h-screen flex flex-col items-center overflow-hidden">
+          {/* LOGO CENTRALIZADO */}
+          <div className="pt-6 lg:pt-8 z-30">
+            <Image
+              src="/logo.png"
+              alt="Jeniffer Zamoner Logo"
+              width={200}
+              height={80}
+              className="w-[100px] md:w-[120px] lg:w-[140px] mx-auto h-auto"
+            />
           </div>
 
-          {/* BOTÕES DESKTOP EM GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {buttons.map((button) => (
-              <motion.button
-                key={button.id}
-                whileHover={{ scale: 1.03, y: -4 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className={`
-                  relative overflow-hidden group
-                  bg-black/80 backdrop-blur-sm text-white
-                  px-6 py-6 lg:px-8 lg:py-8 rounded-2xl
-                  border-2 ${button.borderColor} ${button.shadowColor} shadow-xl
-                  hover:shadow-2xl hover:bg-black/90 transition-all duration-300
-                `}
-              >
-                <div className={`
-                  absolute inset-0 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity
-                  bg-gradient-to-br ${button.color}
-                `}></div>
+          {/* IMAGEM DA JENIFFER */}
+          <div className="relative z-10 mt-4 md:mt-6 flex justify-center w-full">
+            <Image
+              src="/jeniffer-image.png"
+              alt="Jeniffer Zamoner"
+              width={600}
+              height={900}
+              className="w-[280px] md:w-[360px] lg:w-[380px] xl:w-[420px] h-auto object-contain"
+              priority
+            />
+
+            {/* CARD DESKTOP */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+              className="
+                absolute bottom-[-80px] md:bottom-[-100px] lg:bottom-[-120px] 
+                left-[35%] -translate-x-1/2 z-20
+                w-[100%] max-w-[480px]
+              "
+            >
+              <div className="
+                relative bg-black/90 backdrop-blur-sm text-white text-center
+                px-6 py-4 lg:px-8 lg:py-5 rounded-2xl
+                border-2 border-green-400 shadow-2xl shadow-green-500/20
+              ">
+                <div className="
+                  absolute inset-0 rounded-2xl
+                  bg-gradient-to-r from-transparent via-green-400/10 to-transparent
+                "></div>
                 
-                <div className="relative z-10 text-center">
-                  <h3 className="text-xl lg:text-2xl font-bold mb-3">
-                    {button.title}
-                  </h3>
-                  <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
-                    {button.description}
+                <div className="relative z-10">
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 text-green-400">
+                    Seus resultados a um clique!
+                  </h2>
+                  <p className="text-base md:text-lg leading-relaxed text-gray-100">
+                    Escolha abaixo o que mais faz sentido para você hoje!
                   </p>
                 </div>
-              </motion.button>
-            ))}
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* SEGUNDA SEÇÃO - Botões */}
+        <section className="relative w-full py-16 lg:py-20">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-green-400">
+                Como posso te ajudar?
+              </h2>
+              <p className="text-lg text-gray-300">
+                Escolha a opção que melhor se adequa aos seus objetivos
+              </p>
+            </div>
+
+            {/* BOTÕES DESKTOP EM GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {buttons.map((button) => (
+                <motion.button
+                  key={button.id}
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                  className={`
+                    relative overflow-hidden group
+                    bg-black/80 backdrop-blur-sm text-white
+                    px-6 py-6 lg:px-8 lg:py-8 rounded-2xl
+                    border-2 ${button.borderColor} ${button.shadowColor} shadow-xl
+                    hover:shadow-2xl hover:bg-black/90 transition-all duration-300
+                  `}
+                >
+                  <div className={`
+                    absolute inset-0 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity
+                    bg-gradient-to-br ${button.color}
+                  `}></div>
+                  
+                  <div className="relative z-10 text-center">
+                    <h3 className="text-xl lg:text-2xl font-bold mb-3">
+                      {button.title}
+                    </h3>
+                    <p className="text-base lg:text-lg text-gray-300 leading-relaxed">
+                      {button.description}
+                    </p>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
 
       {/* VERSÃO MOBILE - visível apenas em telas pequenas */}
       <section

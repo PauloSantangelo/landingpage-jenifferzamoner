@@ -1,5 +1,6 @@
-// app/page.tsx
-import HeroSection from "@/components/HeroSection";
+// app/page.tsx (versão atualizada)
+
+import HeroSection from "@/components/InstaSection";
 
 export default function Home() {
   return (

@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, ReactNode } from 'react'; // Adicionado para os componentes
-import { motion } from 'framer-motion'; // Adicionado para os componentes
+import { useRef, ReactNode } from 'react';
+import { motion } from 'framer-motion';
 
-// --- COMPONENTES GLOBAIS ADICIONADOS PARA CONSISTÊNCIA ---
+// --- COMPONENTES GLOBAIS PARA CONSISTÊNCIA ---
 
 function BackgroundAndEffects() {
   return (
@@ -37,6 +37,13 @@ function FloatingWhatsAppButton() {
     );
 }
 
+// --- ANIMAÇÃO PADRÃO PARA AS SEÇÕES ---
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
 
 // --- PÁGINA DE CONSULTORIA ---
 
@@ -48,17 +55,20 @@ export default function ConsultoriaPage() {
       <FloatingWhatsAppButton />
 
       <main className="relative z-0">
-        {/* =======================================================================
-        SEÇÃO 1: VÍDEO DE APRESENTAÇÃO PESSOAL
-        ======================================================================= */}
+        
+        {/* SEÇÃO 1: VÍDEO DE APRESENTAÇÃO PESSOAL */}
         <section className="bg-black py-20 px-4 flex flex-col items-center justify-center text-center">
-            <div className="max-w-4xl mx-auto">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="max-w-4xl mx-auto"
+            >
                 <h1 className="text-3xl md:text-5xl font-extrabold mb-4">O Acompanhamento Que Você Precisa Para Resultados Definitivos</h1>
                 <p className="text-lg md:text-xl text-gray-300 mb-8">Assista ao vídeo abaixo e entenda como minha consultoria online vai te levar para o próximo nível.</p>
                 <div className="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-2xl shadow-green-500/20 border-2 border-green-500">
                     <iframe
-                        // IMPORTANTE: Substitua "SEU_VIDEO_ID" pelo ID do seu vídeo do YouTube
-                        src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+                        src="https://www.youtube.com/embed/SEU_VIDEO_ID" // <-- SUBSTITUA "SEU_VIDEO_ID"
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -66,16 +76,14 @@ export default function ConsultoriaPage() {
                         className="w-full h-full"
                     ></iframe>
                 </div>
-                <button className="mt-8 bg-green-500 text-black font-bold py-3 px-10 rounded-lg text-xl hover:bg-green-600 transition-colors">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-8 bg-green-500 text-black font-bold py-3 px-10 rounded-lg text-xl hover:bg-green-600 transition-colors">
                     QUERO SER SEU ALUNO(A)
-                </button>
-            </div>
+                </motion.button>
+            </motion.div>
         </section>
 
-        {/* =======================================================================
-        SEÇÃO 2: PARA QUEM É A CONSULTORIA?
-        ======================================================================= */}
-        <section className="py-20 px-4 bg-gray-950/50">
+        {/* SEÇÃO 2: PARA QUEM É A CONSULTORIA? */}
+        <motion.section {...fadeInUp} className="py-20 px-4 bg-gray-950/50 backdrop-blur-sm">
             <div className="max-w-5xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-12">Essa consultoria foi desenhada para você que...</h2>
                 <div className="grid md:grid-cols-2 gap-10">
@@ -93,12 +101,10 @@ export default function ConsultoriaPage() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        {/* =======================================================================
-        SEÇÃO 3: A METODOLOGIA - O QUE ESTÁ INCLUSO?
-        ======================================================================= */}
-        <section className="py-20 px-4 bg-black">
+        {/* SEÇÃO 3: A METODOLOGIA - O QUE ESTÁ INCLUSO? */}
+        <motion.section {...fadeInUp} className="py-20 px-4 bg-black">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">A Metodologia Completa Para Sua Evolução</h2>
                 <p className="text-gray-400 mb-12 max-w-3xl mx-auto">Você não recebe apenas um treino. Você recebe um sistema completo de acompanhamento.</p>
@@ -109,12 +115,10 @@ export default function ConsultoriaPage() {
                     <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-green-500 transition-colors"><h3 className="text-xl font-bold mb-2">Ajustes e Análises</h3><p className="text-gray-400">Análise periódica do seu progresso com ajustes na planilha para garantir evolução constante e quebrar platôs.</p></div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        {/* =======================================================================
-        SEÇÃO 4: PROVA SOCIAL (DEPOIMENTOS E RESULTADOS)
-        ======================================================================= */}
-        <section className="py-20 px-4 bg-gray-950/50">
+        {/* SEÇÃO 4: PROVA SOCIAL (DEPOIMENTOS E RESULTADOS) */}
+        <motion.section {...fadeInUp} className="py-20 px-4 bg-gray-950/50 backdrop-blur-sm">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-12">Resultados Reais de Alunos Dedicados</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -129,12 +133,10 @@ export default function ConsultoriaPage() {
                     <div className="bg-gray-800 p-6 rounded-lg"><blockquote>&ldquo;Eu estava totalmente perdido. Com a consultoria, em 3 meses tive mais resultado do que em 3 anos tentando sozinho. Incrível.&rdquo;</blockquote><cite className="mt-4 block font-bold not-italic">- Ricardo</cite></div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        {/* =======================================================================
-        SEÇÃO 5: SOBRE A JENIFFER + FAQ
-        ======================================================================= */}
-        <section className="py-20 px-4 bg-black">
+        {/* SEÇÃO 5: SOBRE A JENIFFER + FAQ */}
+        <motion.section {...fadeInUp} className="py-20 px-4 bg-black">
             <div className="max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center gap-10 mb-20 text-center md:text-left">
                     <div className="flex-shrink-0">
@@ -152,36 +154,34 @@ export default function ConsultoriaPage() {
                     <div className="bg-gray-800 p-4 rounded-lg"><details><summary className="font-bold cursor-pointer">Qual a duração do acompanhamento?</summary><p className="mt-2 text-gray-400">Oferecemos planos Trimestrais e Semestrais. A consistência é a chave para resultados sólidos e duradouros.</p></details></div>
                 </div>
             </div>
-        </section>
+        </motion.section>
         
-        {/* =======================================================================
-        SEÇÃO 6: OFERTA FINAL E CHAMADA PARA AÇÃO
-        ======================================================================= */}
-        <section className="relative py-20 px-4 overflow-hidden">
+        {/* SEÇÃO 6: OFERTA FINAL E CHAMADA PARA AÇÃO */}
+        <motion.section {...fadeInUp} className="relative py-20 px-4 overflow-hidden">
              <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-50"><div className="w-[50rem] h-[50rem] bg-green-500/15 rounded-full blur-3xl" /></div>
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Pronto(a) Para Iniciar Sua Transformação?</h2>
                 <p className="text-gray-400 mb-8">As vagas são limitadas para garantir a qualidade do meu acompanhamento. Garanta a sua.</p>
                 <div className="grid md:grid-cols-2 gap-8">
-                    <div className="bg-gray-800 p-8 rounded-lg border-2 border-gray-700 transform hover:scale-105 transition-transform">
+                    <motion.div whileHover={{y: -5}} className="bg-gray-800 p-8 rounded-lg border-2 border-gray-700 transition-transform">
                         <h3 className="text-2xl font-bold mb-2">Plano Trimestral</h3>
                         <p className="text-4xl font-bold my-4">3x de R$ 300</p>
                         <p className="text-gray-400">ou R$ 850 à vista</p>
                         <button className="mt-6 w-full bg-gray-600 text-white font-bold py-3 rounded-lg hover:bg-gray-700 transition-colors">QUERO ESTE PLANO</button>
-                    </div>
-                    <div className="bg-green-900/50 p-8 rounded-lg border-2 border-green-500 relative transform hover:scale-105 transition-transform">
+                    </motion.div>
+                    <motion.div whileHover={{y: -5}} className="bg-green-900/50 p-8 rounded-lg border-2 border-green-500 relative transition-transform">
                         <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-green-500 text-black text-sm font-bold px-3 py-1 rounded-full">MAIS VANTAJOSO</span>
                         <h3 className="text-2xl font-bold mb-2">Plano Semestral</h3>
                         <p className="text-4xl font-bold my-4">6x de R$ 250</p>
                         <p className="text-gray-300">ou R$ 1400 à vista</p>
                         <button className="mt-6 w-full bg-green-500 text-black font-bold py-3 rounded-lg hover:bg-green-600 transition-colors">GARANTIR MINHA VAGA</button>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className="mt-12">
                     <p className="text-sm text-gray-500">Garantia de satisfação de 7 dias. Seu resultado é meu compromisso.</p>
                 </div>
             </div>
-        </section>
+        </motion.section>
       </main>
     </div>
   );

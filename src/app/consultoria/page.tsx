@@ -128,7 +128,7 @@ export default function ConsultoriaPage() {
                     <div className="bg-gray-800 rounded-lg p-3"><div className="bg-gray-700 aspect-square rounded-md flex items-center justify-center text-gray-500">Foto 4</div><p className="mt-2 text-sm font-bold">Lucas M. (-12kg)</p></div>
                 </div>
                 <div className="mt-16 grid md:grid-cols-2 gap-8 text-left">
-                    {/* CORREÇÃO DO ERRO DE DEPLOY APLICADA AQUI */}
+                    {/* CORREÇÃO APLICADA AQUI */}
                     <div className="bg-gray-800 p-6 rounded-lg"><blockquote>&ldquo;O suporte da Jeni é surreal. Ela realmente se importa e ajusta tudo que for preciso. Melhor investimento que já fiz!&rdquo;</blockquote><cite className="mt-4 block font-bold not-italic">- Fernanda</cite></div>
                     <div className="bg-gray-800 p-6 rounded-lg"><blockquote>&ldquo;Eu estava totalmente perdido. Com a consultoria, em 3 meses tive mais resultado do que em 3 anos tentando sozinho. Incrível.&rdquo;</blockquote><cite className="mt-4 block font-bold not-italic">- Ricardo</cite></div>
                 </div>

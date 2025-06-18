@@ -49,9 +49,19 @@ function TransformationCard({ trans }: { trans: Transformation }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  return (<div ref={ref} className="break-inside-avoid bg-gray-900/50 border-2 border-green-500/40 rounded-xl overflow-hidden shadow-lg hover:border-green-500 transition-all duration-300 hover:scale-[1.02] relative backdrop-blur-sm"><motion.div className="relative" style={{ y }}><Image src={trans.image} alt={`Transformação de ${trans.name}`} width={600} height={600} className="w-full h-auto object-cover" /></motion.div><div className="p-6"><h3 className="text-2xl font-bold text-green-400">{trans.name}</h3><p className="text-amber-400 font-semibold mb-3">{trans.result}</p>
-  {/* CORREÇÃO DO ERRO DE DEPLOY: Troca de " " por entidades HTML */}
-  <blockquote className="text-gray-300 italic border-l-4 border-green-700/50 pl-4">&ldquo;{trans.feedback}&rdquo;</blockquote></div></div>);
+  return (
+    <div ref={ref} className="break-inside-avoid bg-gray-900/50 border-2 border-green-500/40 rounded-xl overflow-hidden shadow-lg hover:border-green-500 transition-all duration-300 hover:scale-[1.02] relative backdrop-blur-sm">
+      <motion.div className="relative" style={{ y }}>
+        <Image src={trans.image} alt={`Transformação de ${trans.name}`} width={600} height={600} className="w-full h-auto object-cover" />
+      </motion.div>
+      <div className="p-6">
+        <h3 className="text-2xl font-bold text-green-400">{trans.name}</h3>
+        <p className="text-amber-400 font-semibold mb-3">{trans.result}</p>
+        {/* CORREÇÃO APLICADA AQUI */}
+        <blockquote className="text-gray-300 italic border-l-4 border-green-700/50 pl-4">&ldquo;{trans.feedback}&rdquo;</blockquote>
+      </div>
+    </div>
+  );
 }
 
 interface PersuasiveSectionProps { title: string; children: ReactNode; glowPosition?: 'left' | 'right'; }
@@ -60,9 +70,14 @@ function PersuasiveSection({ title, children, glowPosition = 'left' }: Persuasiv
 }
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
-    return (<div className="relative bg-gray-900/50 border border-amber-400/30 p-8 rounded-2xl h-full flex flex-col"><svg className="absolute top-6 left-6 h-10 w-10 text-amber-400/20" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 4 1 7.456 1 12.352 1 17.248 4.456 21 9.352 21 14.248 21 17 17.248 17 12.352 17 7.456 14.248 4 9.352 4zm14 0c-4.896 0-8.352 3.456-8.352 8.352 0 4.896 3.456 8.352 8.352 8.352 4.896 0 8.352-3.456 8.352-8.352C31.352 7.456 28.248 4 23.352 4z" /></svg>
-    {/* CORREÇÃO DO ERRO DE DEPLOY: Troca de " " por entidades HTML */}
-    <blockquote className="relative text-gray-300 flex-grow"><p className="z-10">&ldquo;{testimonial.text}&rdquo;</p></blockquote><footer className="mt-6 pt-6 border-t border-gray-800"><p className="font-bold text-amber-400">{testimonial.author}</p><p className="text-sm text-gray-500">{testimonial.type}</p></footer></div>);
+    return (
+      <div className="relative bg-gray-900/50 border border-amber-400/30 p-8 rounded-2xl h-full flex flex-col">
+        <svg className="absolute top-6 left-6 h-10 w-10 text-amber-400/20" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 4 1 7.456 1 12.352 1 17.248 4.456 21 9.352 21 14.248 21 17 17.248 17 12.352 17 7.456 14.248 4 9.352 4zm14 0c-4.896 0-8.352 3.456-8.352 8.352 0 4.896 3.456 8.352 8.352 8.352 4.896 0 8.352-3.456 8.352-8.352C31.352 7.456 28.248 4 23.352 4z" /></svg>
+        {/* CORREÇÃO APLICADA AQUI */}
+        <blockquote className="relative text-gray-300 flex-grow"><p className="z-10">&ldquo;{testimonial.text}&rdquo;</p></blockquote>
+        <footer className="mt-6 pt-6 border-t border-gray-800"><p className="font-bold text-amber-400">{testimonial.author}</p><p className="text-sm text-gray-500">{testimonial.type}</p></footer>
+      </div>
+    );
 }
 
 function BackToHomeButton() {
@@ -89,7 +104,6 @@ function FloatingWhatsAppButton() {
             href="https://wa.me/55119XXXXXXXX?text=Olá! Vi os resultados no site e gostaria de mais informações."
             target="_blank"
             rel="noopener noreferrer"
-            // AJUSTE: Adicionado 'md:hidden' para o botão aparecer só no mobile
             className="fixed bottom-4 right-4 z-[9999] flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-xl shadow-green-500/30 md:hidden"
             style={{ y, rotate }}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -103,8 +117,7 @@ function FloatingWhatsAppButton() {
     );
 }
 
-
-// --- COMPONENTE PRINCIPAL DA PÁGINA (COM A ESTRUTURA CORRIGIDA) ---
+// --- COMPONENTE PRINCIPAL DA PÁGINA ---
 export default function TransformacoesPage() {
   return (
     <div className="text-white min-h-screen">

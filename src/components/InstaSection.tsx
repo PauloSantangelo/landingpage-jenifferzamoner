@@ -10,7 +10,7 @@ export default function InstaSection() {
   const buttons = [
     {
       id: 1,
-      title: "💪 Treino Personalizado",
+      title: "💪 Desafio 21D – Queima Acelerada",
       description: "Escolha seu pacote com treinos, dicas e avaliações sob medida",
       color: "from-green-500 to-green-600",
       borderColor: "border-green-400",

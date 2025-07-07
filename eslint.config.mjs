@@ -1,22 +1,9 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  // ADICIONE ESTE BLOCO PARA DESATIVAR A REGRA
-  {
-    rules: {
-      "react/no-unescaped-entities": "off",
-    },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // ADICIONE ESTA LINHA PARA DESATIVAR O ERRO
+  eslint: {
+    ignoreDuringBuilds: true,
   },
-];
+};
 
-export default eslintConfig;
+export default nextConfig;

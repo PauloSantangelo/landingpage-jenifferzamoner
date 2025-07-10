@@ -103,7 +103,7 @@ export default function ConsultoriaPage() {
                 <p className="text-lg md:text-xl text-gray-300 mb-8">Assista ao vídeo abaixo e entenda como minha consultoria online vai te levar para o próximo nível.</p>
                 <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl shadow-green-500/20 border-4 border-green-500">
                     <iframe
-                        src="https://www.youtube.com/embed/ZljJGluwnY4?si=KetUG9yGHuFcUsN9"
+                        src="https://www.youtube.com/embed/Twl6y6wZ_L0"
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -48,28 +48,26 @@ export default function ConsultoriaPage() {
 
   const resultados = [
     {
-      src: "/images/transformations/resultado1.webp",
-      caption: "Maria C. (-8kg)",
-      alt: "Resultado de antes e depois da aluna Maria C."
+      src: "/images/transformations/yohan2.webp", // Caminho atualizado
+      caption: "Yohan (Hipertrofia)", // Texto atualizado
+      alt: "Resultado de antes e depois do aluno Yohan D." // Alt text atualizado
     },
     {
-      src: "/images/transformations/resultado2.webp",
-      caption: "Pedro H. (+5kg)",
-      alt: "Resultado de antes e depois do aluno Pedro H."
+      src: "/images/transformations/aline.webp", // Caminho atualizado
+      caption: "Aline B. (Constância)", // Texto atualizado
+      alt: "Resultado de antes e depois da aluna Franceli A." // Alt text atualizado
     },
     {
-      src: "/images/transformations/resultado5.webp",
-      caption: "Ana L. (Definição)",
-      alt: "Resultado de antes e depois da aluna Ana L."
+      src: "/images/transformations/mirela2.webp", // Caminho atualizado
+      caption: "Mirela D. (Evolução)", // Texto atualizado
+      alt: "Resultado de antes e depois da aluna Giovanna B." // Alt text atualizado
     },
     {
-      src: "/images/transformations/resultado7.webp",
-      caption: "Lucas M. (-12kg)",
-      alt: "Resultado de antes e depois do aluno Lucas M."
+      src: "/images/transformations/Iane1.webp", // Caminho atualizado
+      caption: "Iane. (Foco Total)", // Texto atualizado
+      alt: "Resultado de antes e depois da aluna Ana C." // Alt text atualizado
     }
   ];
-
-  const [isHoveringMentor, setIsHoveringMentor] = useState(false);
 
   const mentores = {
     jeniffer: {
@@ -182,20 +180,20 @@ export default function ConsultoriaPage() {
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-12">Resultados Reais de Alunos Dedicados</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                  {resultados.map((resultado, index) => (
-                    <div key={index} className="bg-gray-900/50 p-3 rounded-lg flex flex-col group">
-                      <div className="relative aspect-square w-full rounded-md overflow-hidden">
-                        <Image
-                          src={resultado.src}
-                          alt={resultado.alt}
-                          fill
-                          sizes="(max-width: 768px) 50vw, 25vw"
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-                      <p className="mt-3 text-sm font-semibold text-gray-200">{resultado.caption}</p>
-                    </div>
-                  ))}
+                    {resultados.map((resultado, index) => (
+                        <div key={index} className="bg-gray-900/50 p-3 rounded-lg flex flex-col group">
+                            <div className="relative aspect-square w-full rounded-md overflow-hidden">
+                                <Image
+                                  src={resultado.src}
+                                  alt={resultado.alt}
+                                  fill
+                                  sizes="(max-width: 768px) 50vw, 25vw"
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                />
+                            </div>
+                            <p className="mt-3 text-sm font-semibold text-gray-200">{resultado.caption}</p>
+                        </div>
+                    ))}
                 </div>
                 <div className="mt-16 grid md:grid-cols-2 gap-8 text-left">
                     <div className="bg-gray-800 p-6 rounded-lg"><blockquote>“Após o meu acidente, quando quase perdi o tornozelo, enfrentei muitas limitações e desânimo. Já são três anos de parceria, e foi imprescindível para minha recuperação, não apenas física, mas também emocional. Sua dedicação, profissionalismo e motivação foram fundamentais. Sinto que Deus foi generoso ao colocar você em minha vida. Obrigado por tudo!”</blockquote><cite className="mt-4 block font-bold not-italic">- Yohan D'Azeredo</cite></div>
@@ -206,32 +204,47 @@ export default function ConsultoriaPage() {
 
         <motion.section {...fadeInUp} className="py-20 px-4 bg-gray-950/50 backdrop-blur-sm">
             <div className="max-w-4xl mx-auto">
-                <div 
-                    className="flex flex-col md:flex-row items-center gap-10 mb-20 text-center md:text-left cursor-pointer"
-                    onMouseEnter={() => setIsHoveringMentor(true)}
-                    onMouseLeave={() => setIsHoveringMentor(false)}
-                >
-                    <div className="flex-shrink-0 w-48 h-48 md:w-64 md:h-64">
-                        <div className="relative w-full h-full rounded-full overflow-hidden shadow-lg transition-transform duration-500 ease-in-out" style={{ transformStyle: 'preserve-3d', transform: isHoveringMentor ? 'rotateY(180deg)' : 'rotateY(0deg)'}}>
-                            <div className="absolute w-full h-full" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}>
-                                <Image src={mentores.jeniffer.imageSrc} alt={mentores.jeniffer.name} fill className="object-cover" />
-                            </div>
-                            <div className="absolute w-full h-full" style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
-                                <Image src={mentores.thiago.imageSrc} alt={mentores.thiago.name} fill className="object-cover" />
-                            </div>
-                        </div>
+                {/* Jeniffer Zamoner */}
+                <div className="flex flex-col md:flex-row items-center gap-10 mb-12 text-center md:text-left">
+                    <div className="relative flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
+                        <Image 
+                            src={mentores.jeniffer.imageSrc} 
+                            alt={mentores.jeniffer.name} 
+                            fill 
+                            className="object-cover" 
+                        />
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold mb-4">
-                            {isHoveringMentor ? mentores.thiago.name : mentores.jeniffer.name}
+                            {mentores.jeniffer.name}
                         </h2>
                         <p className="text-gray-300">
-                            {isHoveringMentor ? mentores.thiago.bio : mentores.jeniffer.bio}
+                            {mentores.jeniffer.bio}
                         </p>
                     </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-center mb-8">Perguntas Frequentes</h2>
+                {/* Thiago Pagani abaixo da Jeniffer com imagem à direita */}
+                <div className="flex flex-col md:flex-row items-center gap-10 text-center md:text-left border-t border-gray-700 pt-12 mt-12 md:flex-row-reverse">
+                    <div className="relative flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
+                        <Image 
+                            src={mentores.thiago.imageSrc} 
+                            alt={mentores.thiago.name} 
+                            fill 
+                            className="object-cover" 
+                        />
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-bold mb-4">
+                            {mentores.thiago.name}
+                        </h2>
+                        <p className="text-gray-300">
+                            {mentores.thiago.bio}
+                        </p>
+                    </div>
+                </div>
+
+                <h2 className="text-3xl font-bold text-center mt-20 mb-8">Perguntas Frequentes</h2>
                 <div className="space-y-4">
                     <div className="bg-gray-800 p-4 rounded-lg"><details><summary className="font-bold cursor-pointer">Sou totalmente iniciante, a consultoria serve para mim?</summary><p className="mt-2 text-gray-400">Com certeza! É o melhor cenário para começar do jeito certo, criando uma base sólida e evitando os erros mais comuns.</p></details></div>
                     <div className="bg-gray-800 p-4 rounded-lg"><details><summary className="font-bold cursor-pointer">Como funciona o pagamento?</summary><p className="mt-2 text-gray-400">O pagamento é feito via Pix, boleto ou cartão de crédito. Entre em contato para conhecer os planos.</p></details></div>

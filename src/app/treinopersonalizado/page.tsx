@@ -21,7 +21,7 @@ function BackgroundAndEffects() {
 
 function LogoBackground() {
   return (
-    <div 
+    <div
       className="fixed inset-0 -z-30 w-full h-full"
       style={{
         backgroundImage: "url('/logo.png')",
@@ -64,18 +64,37 @@ const fadeInUp = {
   transition: { duration: 0.6, ease: "easeOut" }
 };
 
-const transformationImages = Array.from({ length: 14 }, (_, i) => `/images/transformations/resultado${i + 1}.webp`);
+// --- Lista de imagens específica e duplicada para o efeito de loop ---
+const originalTransformationImages = [
+  "/images/transformations/aline.webp",
+  "/images/transformations/camila1.webp",
+  "/images/transformations/edneia1.webp",
+  "/images/transformations/edneia2.webp",
+  "/images/transformations/Iane1.webp",
+  "/images/transformations/Iane2.webp",
+  "/images/transformations/mirela2.webp",
+  "/images/transformations/mirela3.webp",
+  "/images/transformations/rebeca1.webp",
+  "/images/transformations/rebeca2.webp",
+  "/images/transformations/tatiane1.webp",
+  "/images/transformations/tatiane2.webp",
+  "/images/transformations/yohan1.webp",
+  "/images/transformations/yohan2.webp",
+];
+
+// Duplica as imagens para criar a ilusão de loop
+const transformationImages = [...originalTransformationImages, ...originalTransformationImages];
+
 
 // --- PÁGINA PRINCIPAL ---
 export default function TreinoPersonalizadoPage() {
-  // CORREÇÃO 1: Adicionar o tipo <HTMLDivElement> e o valor inicial null
   const carousel = useRef<HTMLDivElement>(null);
   const [carouselWidth, setCarouselWidth] = useState(0);
 
   useEffect(() => {
-    // CORREÇÃO 2: Verificar se carousel.current não é nulo antes de usar
     if (carousel.current) {
-      setCarouselWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+      // Ajusta o carouselWidth para o dobro do tamanho, para acomodar as imagens duplicadas
+      setCarouselWidth(carousel.current.scrollWidth / 2 - carousel.current.offsetWidth / 2);
     }
   }, []);
 
@@ -99,13 +118,13 @@ export default function TreinoPersonalizadoPage() {
             <h1 className="text-4xl md:text-6xl font-extrabold uppercase mb-4">Desafio 21D: A Queima Acelerada Começa Agora</h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">Participe do <span className="font-bold text-green-400">Desafio 21D – Queima Acelerada com Jeniffer</span> e conquiste o corpo que você sempre sonhou com um método focado em emagrecimento rápido e saudável.</p>
             <div className="relative w-full aspect-video max-w-2xl mx-auto mb-8 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-              <iframe 
+              <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/iBdG2VOeEaE?si=cJC1GPmCZIRfAVFJ" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
+                src="https://www.youtube.com/embed/iBdG2VOeEaE?si=cJC1GPmCZIRfAVFJ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
             </div>
@@ -159,29 +178,31 @@ export default function TreinoPersonalizadoPage() {
                 <p className="text-gray-300">Jeniffer Zamoner é especialista em emagrecimento e transformação corporal. Com anos de experiência e centenas de alunas satisfeitas, ela desenvolveu o <span className="font-bold text-green-400">Desafio 21D</span> para entregar a você o caminho mais curto e eficiente para a queima de gordura.</p>
               </div>
             </div>
-            
+
             {/* --- SEÇÃO GALERIA DE RESULTADOS --- */}
             <h2 className="text-3xl font-bold text-center mb-12">Resultados que falam por si</h2>
             <motion.div ref={carousel} className="cursor-grab overflow-hidden" whileTap={{ cursor: "grabbing" }}>
               <motion.div
                 drag="x"
-                dragConstraints={{ right: 0, left: -carouselWidth }}
+                // Ajusta o dragConstraints para permitir arrastar por todas as imagens duplicadas
+                dragConstraints={{ right: 0, left: -(carouselWidth * 2) }} // Multiplica por 2 para o dobro de imagens
                 className="flex gap-6 py-4"
               >
+                {/* Mapeia o array duplicado de imagens */}
                 {transformationImages.map((imageSrc, index) => (
-                  <motion.div key={index} className="flex-shrink-0 w-[70vw] sm:w-[40vw] md:w-[24vw] aspect-[9/16] bg-gray-800/50 rounded-2xl shadow-lg p-2 border-2 border-green-500">
+                  <motion.div key={index} className="flex-shrink-0 w-[50vw] sm:w-[30vw] md:w-[18vw] aspect-square bg-gray-800/50 rounded-2xl shadow-lg p-2 border-2 border-green-500">
                     <Image
                       src={imageSrc}
                       alt={`Resultado da transformação ${index + 1}`}
-                      width={360}
-                      height={640}
+                      width={360} // Manter width/height para otimização do Next/Image
+                      height={360} // Ajustado para ser quadrado
                       className="w-full h-full object-cover rounded-xl pointer-events-none"
                     />
                   </motion.div>
                 ))}
               </motion.div>
             </motion.div>
-            
+
           </div>
         </motion.section>
 
@@ -220,16 +241,16 @@ export default function TreinoPersonalizadoPage() {
                     <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 flex flex-col">
                         <h3 className="text-2xl font-bold mb-2">Plano Semestral</h3>
                         <p className="text-4xl font-bold my-4">R$89,90</p>
-                         <p className="text-gray-400 mb-6">Pagamento único</p>
+                        <p className="text-gray-400 mb-6">Pagamento único</p>
                         <ul className="space-y-2 text-left mb-8 flex-grow">
                             <li className="flex items-center"><CheckIcon /><span>6 meses de acesso</span></li>
                             <li className="flex items-center"><CheckIcon /><span>3 treinos</span></li>
                             <li className="flex items-center"><CheckIcon /><span>Dicas de alimentação</span></li>
                         </ul>
-                         <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full mt-auto bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
+                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full mt-auto bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
                     </div>
                 </div>
-                 <div className="mt-8">
+                <div className="mt-8">
                     <p className="text-sm text-gray-500">🔒 Compra segura. Receba seu acesso por e-mail imediatamente após a confirmação do pagamento.</p>
                 </div>
             </div>

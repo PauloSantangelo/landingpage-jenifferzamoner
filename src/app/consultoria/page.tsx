@@ -48,7 +48,7 @@ export default function ConsultoriaPage() {
 
   const resultados = [
     {
-      src: "/images/transformations/yohan2.webp", // Caminho atualizado
+      src: "/images/transformations/Yohan2.webp", // Caminho atualizado
       caption: "Yohan (Hipertrofia)", // Texto atualizado
       alt: "Resultado de antes e depois do aluno Yohan D." // Alt text atualizado
     },
@@ -225,7 +225,7 @@ export default function ConsultoriaPage() {
                 </div>
 
                 {/* Thiago Pagani abaixo da Jeniffer com imagem à direita */}
-                <div className="flex flex-col md:flex-row items-center gap-10 text-center md:text-left border-t border-gray-700 pt-12 mt-12 md:flex-row-reverse">
+                <div className="flex flex-col items-center gap-10 text-center md:text-left border-t border-gray-700 pt-12 mt-12 md:flex-row-reverse">
                     <div className="relative flex-shrink-0 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
                         <Image 
                             src={mentores.thiago.imageSrc} 

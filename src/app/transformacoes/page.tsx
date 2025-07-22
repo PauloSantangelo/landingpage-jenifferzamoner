@@ -186,10 +186,10 @@ function PersuasiveSection({ title, children, glowPosition = 'left' }: Persuasiv
         <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">{title}</h2>
         <div className="mt-6 text-lg text-gray-300">{children}</div>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/consultoria" className="w-full sm:w-auto">
+          <Link href={`https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
             <button className="w-full bg-green-500 text-black font-bold py-3 px-8 rounded-lg hover:bg-green-400 transition-all shadow-lg shadow-green-500/20 hover:shadow-green-400/40">Quero Consultoria Online</button>
           </Link>
-          <Link href="/treinopersonalizado" className="w-full sm:w-auto">
+          <Link href={`https://wa.me/5514988226651?text=Olá, quero um treino personalizado.`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
             <button className="w-full bg-transparent border-2 border-amber-400 text-amber-400 font-bold py-3 px-8 rounded-lg hover:bg-amber-400 hover:text-black transition-all">Quero a Planilha de Treino</button>
           </Link>
         </div>
@@ -234,7 +234,7 @@ function FloatingWhatsAppButton() {
   return (
     <motion.a
       ref={ref}
-      href="https://wa.me/55119XXXXXXXX?text=Olá! Vi os resultados no site e gostaria de mais informações."
+      href="https://wa.me/5514988226651?text=Olá! Vim pelos resultados no site e gostaria de mais informações."
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-[9999] flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-xl shadow-green-500/30 md:hidden"
@@ -321,10 +321,10 @@ export default function TransformacoesPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">Sua Transformação Começa Agora.</h2>
               <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto">Você viu o que é possível. O mesmo método e a mesma dedicação estão disponíveis para você. Escolha o caminho que faz mais sentido para o seu momento.</p>
               <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md sm:max-w-none mx-auto">
-                <Link href="/consultoria" className="w-full sm:w-auto">
+                <Link href={`https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <button className="w-full sm:w-auto min-w-[200px] bg-green-500 text-black font-bold py-3 px-6 sm:px-8 rounded-lg hover:bg-green-600 transition-all text-sm sm:text-base">Quero Consultoria Online</button>
                 </Link>
-                <Link href="/treinopersonalizado" className="w-full sm:w-auto">
+                <Link href={`https://wa.me/5514988226651?text=Olá, quero um treino personalizado.`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <button className="w-full sm:w-auto min-w-[200px] bg-transparent border-2 border-amber-400 text-amber-400 font-bold py-3 px-6 sm:px-8 rounded-lg hover:bg-amber-400 hover:text-black transition-all text-sm sm:text-base">Quero a Planilha de Treino</button>
                 </Link>
               </div>

@@ -47,7 +47,7 @@ function BackToHomeButton() {
 
 function FloatingWhatsAppButton() {
   return (
-    <a href="https://wa.me/55119XXXXXXXX?text=Olá! Gostaria de saber mais sobre o Desafio 21D." target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
+    <a href="https://wa.me/5514988226651?text=Quero minha planilha de treinos personalizada" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.167 1.679zm6.247-6.407c.333.52 1.023.895 1.742 1.066s1.233.226 2.373.081c1.14-.145 2.373-.781 3.319-1.661 1.903-1.75 3.429-4.246 3.51-7.032.098-3.388-2.115-6.42-4.963-7.375-2.849-.955-6.039.293-7.376 3.149-1.336 2.857-.315 6.275 2.408 7.612.217.106.406.227.581.352l-1.63 5.925z"/></svg>
       <span className="text-sm">Conversar Agora</span>
     </a>
@@ -128,7 +128,9 @@ export default function TreinoPersonalizadoPage() {
                 allowFullScreen
               ></iframe>
             </div>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-500 text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-400 transition-colors">QUERO MINHA PLANILHA AGORA</motion.button>
+            <Link href="https://wa.me/5514988226651?text=Quero minha planilha de treinos personalizada" target="_blank" rel="noopener noreferrer">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-500 text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-400 transition-colors">QUERO MINHA PLANILHA AGORA</motion.button>
+            </Link>
           </motion.div>
         </section>
 
@@ -221,7 +223,9 @@ export default function TreinoPersonalizadoPage() {
                             <li className="flex items-center"><CheckIcon /><span>2 treinos</span></li>
                             <li className="flex items-center"><CheckIcon /><span>Dicas de alimentação</span></li>
                         </ul>
-                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full mt-auto bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
+                        <Link href="https://wa.me/5514988226651?text=Quero minha planilha de treinos personalizada" target="_blank" rel="noopener noreferrer" className="w-full mt-auto">
+                          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
+                        </Link>
                     </div>
                     <div className="relative bg-gray-800 p-8 rounded-xl border-2 border-green-500 flex flex-col shadow-lg shadow-green-500/20 transform md:scale-105">
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -236,7 +240,9 @@ export default function TreinoPersonalizadoPage() {
                             <li className="flex items-center"><CheckIcon /><span>5 planilhas de treino</span></li>
                             <li className="flex items-center"><CheckIcon /><span>Dicas de alimentação</span></li>
                         </ul>
-                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full mt-auto bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors animate-pulse uppercase">INICIAR DESAFIO</motion.button>
+                        <Link href="https://wa.me/5514988226651?text=Quero minha planilha de treinos personalizada" target="_blank" rel="noopener noreferrer" className="w-full mt-auto">
+                          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors animate-pulse uppercase">INICIAR DESAFIO</motion.button>
+                        </Link>
                     </div>
                     <div className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 flex flex-col">
                         <h3 className="text-2xl font-bold mb-2">Plano Semestral</h3>
@@ -247,7 +253,9 @@ export default function TreinoPersonalizadoPage() {
                             <li className="flex items-center"><CheckIcon /><span>3 treinos</span></li>
                             <li className="flex items-center"><CheckIcon /><span>Dicas de alimentação</span></li>
                         </ul>
-                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full mt-auto bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
+                        <Link href="https://wa.me/5514988226651?text=Quero minha planilha de treinos personalizada" target="_blank" rel="noopener noreferrer" className="w-full mt-auto">
+                          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full bg-green-500 text-black font-bold py-3 px-6 rounded-lg text-lg hover:bg-green-400 transition-colors uppercase">INICIAR DESAFIO</motion.button>
+                        </Link>
                     </div>
                 </div>
                 <div className="mt-8">

@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion'; // Mantenha Variants para tipagem de outras animações, se necessário
+import { motion, Variants } from 'framer-motion';
 import { JSX } from 'react/jsx-runtime';
 
 // --- INTERFACES PARA TIPAGEM DOS DADOS ---
@@ -21,8 +21,8 @@ interface Mentor {
 }
 
 interface Mentores {
-    jeniffer: Mentor;
-    thiago: Mentor;
+  jeniffer: Mentor;
+  thiago: Mentor;
 }
 
 // --- COMPONENTES GLOBAIS PARA CONSISTÊNCIA (SEM TIPAGEM EXPLÍCITA JSX.Element para evitar erros) ---
@@ -54,8 +54,8 @@ function BackToHomeButton() {
 
 function FloatingWhatsAppButton() {
   return (
-    <a href="https://wa.me/55119XXXXXXXX?text=Olá! Vi a página de consultoria e gostaria de mais informações." target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.167 1.679zm6.247-6.407c.333.52 1.023.895 1.742 1.066s1.233.226 2.373.081c1.14-.145 2.373-.781 3.319-1.661 1.903-1.75 3.429-4.246 3.51-7.032.098-3.388-2.115-6.42-4.963-7.375-2.849-.955-6.039.293-7.376 3.149-1.336 2.857-.315 6.275 2.408 7.612.217.106.406.227.581.352l-1.63 5.925z"/></svg>
+    <a href="https://wa.me/5514988226651?text=Olá! Vim pela consultoria on-line" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.167 1.679zM6.247 17.593c.333.52 1.023.895 1.742 1.066s1.233.226 2.373.081c1.14-.145 2.373-.781 3.319-1.661 1.903-1.75 3.429-4.246 3.51-7.032.098-3.388-2.115-6.42-4.963-7.375-2.849-.955-6.039.293-7.376 3.149-1.336 2.857-.315 6.275 2.408 7.612.217.106.406.227.581.352l-1.63 5.925z"/></svg>
       <span className="text-sm">Conversar Agora</span>
     </a>
   );
@@ -136,9 +136,11 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                         className="w-full h-full"
                     ></iframe>
                 </div>
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-8 bg-green-500 text-black font-bold py-3 px-10 rounded-lg text-xl hover:bg-green-600 transition-colors">
-                    QUERO SER SEU ALUNO(A)
-                </motion.button>
+                <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line" target="_blank" rel="noopener noreferrer">
+                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-8 bg-green-500 text-black font-bold py-3 px-10 rounded-lg text-xl hover:bg-green-600 transition-colors">
+                      QUERO SER ALUNO(A)
+                  </motion.button>
+                </Link>
             </motion.div>
         </section>
 
@@ -199,9 +201,11 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                         <li className="flex items-center gap-3"><span className="text-green-500 text-xl">✔</span><span>Análise contínua dos seus treinos para ajustes de performance.</span></li>
                         <li className="flex items-center gap-3"><span className="text-green-500 text-xl">✔</span><span>Contato direto via WhatsApp para tirar qualquer dúvida.</span></li>
                     </ul>
-                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-500 text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition-colors">
-                        QUERO CORRER MELHOR
-                    </motion.button>
+                    <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria de corrida" target="_blank" rel="noopener noreferrer">
+                      <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-green-500 text-black font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 transition-colors">
+                          QUERO CORRER MELHOR
+                      </motion.button>
+                    </Link>
                 </div>
             </div>
         </motion.section>
@@ -293,7 +297,7 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                         <li className="flex items-start gap-3"><span className="text-yellow-400 text-xl">💬</span><span>Suporte direto e rápido via WhatsApp para todas as suas dúvidas.</span></li>
                         <li className="flex items-start gap-3"><span className="text-yellow-400 text-xl">💪</span><span>Integração da musculação para fortalecer o corpo e prevenir lesões na corrida.</span></li>
                     </ul>
-                    <Link href="https://wa.me/55119XXXXXXXX?text=Olá! Gostaria de informações sobre a consultoria de corrida com o Thiago." target="_blank" rel="noopener noreferrer">
+                    <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria de corrida" target="_blank" rel="noopener noreferrer">
                         <motion.button 
                             whileHover={{ scale: 1.05 }} 
                             whileTap={{ scale: 0.95 }}
@@ -327,7 +331,7 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                     
                     {/* BOTÕES SEPARADOS */}
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                        <Link href="https://wa.me/55119XXXXXXXX?text=Olá! Gostaria de informações sobre a consultoria de treino." target="_blank" rel="noopener noreferrer" className="w-full">
+                        <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line" target="_blank" rel="noopener noreferrer" className="w-full">
                             <motion.button 
                                 whileHover={{ scale: 1.05 }} 
                                 whileTap={{ scale: 0.95 }}
@@ -336,7 +340,7 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                                 QUERO CONSULTORIA DE TREINO
                             </motion.button>
                         </Link>
-                        <Link href="https://wa.me/55119XXXXXXXX?text=Olá! Gostaria de informações sobre a consultoria de corrida." target="_blank" rel="noopener noreferrer" className="w-full">
+                        <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria de corrida" target="_blank" rel="noopener noreferrer" className="w-full">
                             <motion.button 
                                 whileHover={{ scale: 1.05 }} 
                                 whileTap={{ scale: 0.95 }}

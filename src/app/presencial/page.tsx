@@ -30,7 +30,7 @@ function BackToHomeButton() {
 
 function FloatingWhatsAppButton() {
     return (
-        <a href="https://wa.me/55119XXXXXXXX?text=Olá! Vi a página de atendimento presencial e gostaria de mais informações." target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
+        <a href="https://wa.me/5514988226651?text=Olá, quero verificar vaga para o treino presencial com Jeniffer Zamoner." target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 flex items-center justify-center gap-3 bg-green-500 text-white font-bold py-3 px-4 rounded-full shadow-lg transition-transform duration-300 ease-out hover:scale-105 md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.456l-6.167 1.679zm6.247-6.407c.333.52 1.023.895 1.742 1.066s1.233.226 2.373.081c1.14-.145 2.373-.781 3.319-1.661 1.903-1.75 3.429-4.246 3.51-7.032.098-3.388-2.115-6.42-4.963-7.375-2.849-.955-6.039.293-7.376 3.149-1.336 2.857-.315 6.275 2.408 7.612.217.106.406.227.581.352l-1.63 5.925z"/></svg>
             <span className="text-sm">Conversar Agora</span>
         </a>
@@ -46,7 +46,7 @@ const fadeInUp = {
 
 export default function PersonalPresencialPage() {
 
-  const whatsappUrl = "https://wa.me/55119XXXXXXXX?text=Olá! Vi a página de atendimento presencial e gostaria de consultar a disponibilidade de vagas.";
+  const whatsappUrl = "https://wa.me/5514988226651?text=Olá, quero verificar vaga para o treino presencial com Jeniffer Zamoner.";
 
   // --- LÓGICA PARA TRANSIÇÃO DE IMAGEM ---
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

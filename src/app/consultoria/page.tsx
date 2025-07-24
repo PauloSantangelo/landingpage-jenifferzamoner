@@ -136,7 +136,7 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                         className="w-full h-full"
                     ></iframe>
                 </div>
-                <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line" target="_blank" rel="noopener noreferrer">
+                <Link href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=1&page=103215&isCheckout=false" target="_blank" rel="noopener noreferrer">
                   <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mt-8 bg-green-500 text-black font-bold py-3 px-10 rounded-lg text-xl hover:bg-green-600 transition-colors">
                       QUERO SER ALUNO(A)
                   </motion.button>
@@ -329,22 +329,48 @@ export default function ConsultoriaPage(): JSX.Element { // Mantendo a tipagem d
                     <p className="text-lg text-gray-300 mt-4">Planos a partir de</p>
                     <p className="text-5xl font-bold my-2">R$ 149,90<span className="text-2xl font-normal text-gray-400">/mês</span></p>
                     
-                    {/* BOTÕES SEPARADOS */}
-                    <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                        <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria on-line" target="_blank" rel="noopener noreferrer" className="w-full">
+                    {/* BOTÕES DE PLANOS */}
+                    <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-4 justify-center"> {/* Adicionado flex-wrap e justify-center para melhor responsividade */}
+                        
+                        {/* Botão Mensal (agora em verde) */}
+                        <Link href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=1&page=103215&isCheckout=true" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-grow">
                             <motion.button 
                                 whileHover={{ scale: 1.05 }} 
                                 whileTap={{ scale: 0.95 }}
                                 className="w-full bg-green-500 text-black font-bold py-3 rounded-lg text-lg hover:bg-green-600 transition-colors shadow-lg shadow-green-500/20"
                             >
-                                QUERO CONSULTORIA DE TREINO
+                                R$ 149,90/MÊS
                             </motion.button>
                         </Link>
-                        <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria de corrida" target="_blank" rel="noopener noreferrer" className="w-full">
+                        
+                        {/* Botão Trimestral */}
+                        <Link href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=103216&page=103215" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-grow">
                             <motion.button 
                                 whileHover={{ scale: 1.05 }} 
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full bg-transparent border-2 border-green-500 text-green-400 font-bold py-3 rounded-lg text-lg hover:bg-green-500 hover:text-black transition-colors"
+                                className="w-full bg-transparent border-2 border-green-500 text-green-400 font-bold py-3 rounded-lg text-lg hover:bg-green-500 hover:text-black transition-colors relative"
+                            >
+                                R$ 419,70 TRIMESTRAL <span className="absolute -top-3 right-0 bg-yellow-500 text-black text-xs font-semibold px-2 py-1 rounded-full animate-bounce-slow">Desconto!</span>
+                            </motion.button>
+                        </Link>
+
+                        {/* Botão Semestral */}
+                        <Link href="https://pages.mfitpersonal.com.br/index?acao=page&tipo=2&buyPage=103217&page=103215" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-grow">
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }} 
+                                whileTap={{ scale: 0.95 }}
+                                className="w-full bg-transparent border-2 border-green-500 text-green-400 font-bold py-3 rounded-lg text-lg hover:bg-green-500 hover:text-black transition-colors relative"
+                            >
+                                R$ 778,40 SEMESTRAL <span className="absolute -top-3 right-0 bg-yellow-500 text-black text-xs font-semibold px-2 py-1 rounded-full animate-bounce-slow">Maior Desconto!</span>
+                            </motion.button>
+                        </Link>
+
+                        {/* O botão "QUERO CONSULTORIA DE CORRIDA" permanece inalterado */}
+                        <Link href="https://wa.me/5514988226651?text=Olá, vim pela consultoria de corrida" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-grow">
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }} 
+                                whileTap={{ scale: 0.95 }}
+                                className="w-full bg-transparent border-2 border-yellow-500 text-yellow-400 font-bold py-3 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition-colors"
                             >
                                 QUERO CONSULTORIA DE CORRIDA
                             </motion.button>
